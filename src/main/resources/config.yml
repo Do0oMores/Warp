@@ -1,0 +1,8 @@
+在以下世界禁止使用:
+  -
+data:
+  example:
+    world:
+    x:
+    y:
+    z:

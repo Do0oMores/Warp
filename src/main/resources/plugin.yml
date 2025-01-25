@@ -4,3 +4,7 @@ main: top.mores.warp.Warp
 api-version: '1.18'
 authors: [ Mores ]
 description: 传送点
+commands:
+  warp:
+    description: 传送点管理
+    usage: /warp <warpName> 或 /warp add <warpName> 或 /warp del <warpName>
