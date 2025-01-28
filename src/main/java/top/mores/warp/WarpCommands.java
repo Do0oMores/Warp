@@ -50,7 +50,6 @@ public class WarpCommands implements CommandExecutor {
             } else {
                 String warpName = args[0];
                 warpHandler.teleportPlayer(player, warpName);
-                player.sendMessage("你没有权限使用传送点！");
                 return true;
             }
         } else {
