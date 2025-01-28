@@ -6,12 +6,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class WarpCommands implements CommandExecutor {
-    private final WarpHandler warpHandler=new WarpHandler();
+    private final WarpHandler warpHandler = new WarpHandler();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
-        if (commandSender instanceof Player) {
-            Player player = (Player) commandSender;
+        if (commandSender instanceof Player player) {
 
             if (args.length == 0) {
                 player.sendMessage("使用方法：/warp <warpName> 或 /warp add <warpName> 或 /warp del <warpName>");
@@ -50,12 +49,8 @@ public class WarpCommands implements CommandExecutor {
 
             } else {
                 String warpName = args[0];
-                // 普通玩家使用传送点
-                if (player.hasPermission("warp.use")) {
-                    warpHandler.teleportPlayer(player, warpName);
-                } else {
-                    player.sendMessage("你没有权限使用传送点！");
-                }
+                warpHandler.teleportPlayer(player, warpName);
+                player.sendMessage("你没有权限使用传送点！");
                 return true;
             }
         } else {
